@@ -1,22 +1,53 @@
 package org.launchcode;
-
 import java.util.Scanner;
 
-public class Area {
 
+public class Area {
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);  // What does this do?
+        Scanner input = new Scanner(System.in);
 
-        System.out.println("Enter a radius:"); // Explain system out vs system in
 
-        double radius = input.nextDouble(); // What does .nextDouble means
-        double area = Circle.getArea(radius);
+        while (true); {
+            System.out.println("Enter radius: ");
+            if (input.hasNextDouble()) {
+                Double radius = input.nextDouble();
 
-        System.out.println("The area of a circle with a radius of " + radius + " is " + area);
+                if (radius >= 0) {
+                    return;
+                } else {
+                    System.out.println("Radius cannot be negative! Try again!");
+                }
 
-        input.close(); // is this required?
+                if (Double.isNaN(radius)) {
+                    System.out.println("Input is not a number! Try again!");
+                }
+
+                Double area = Circle.getArea(radius);
+                System.out.println("The area of a circle of radius " + radius + "is: " + area);
+
+            }
+
+        }
+
+
+
+
+
+
+//
+//        if (Double.isNaN(radius)) {
+//            System.out.println("Not a valid input!");
+//            return;
+//        }
+
+
+
+
+
+
+        System.out.println("The area of a circle of radius " + radius + " is: " + area);
+
 
     }
-
 }
