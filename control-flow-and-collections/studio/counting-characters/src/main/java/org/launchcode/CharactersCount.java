@@ -16,11 +16,11 @@ public class CharactersCount {
         HashMap<Character, Integer> counts = new HashMap<>();
 
         // 4.  Loop through the character array
-        for (char c: charArray) {
-            if (counts.containsKey(c)) {
-                counts.put(c, counts.get(c) + 1);
+        for (char letter: charArray) {
+            if (counts.containsKey(letter)) {
+                counts.put(letter, counts.get(letter) + 1);
             } else {
-                counts.put(c, 1);
+                counts.put(letter, 1);
             }
         }
 
