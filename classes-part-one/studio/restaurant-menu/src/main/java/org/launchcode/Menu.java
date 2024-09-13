@@ -16,6 +16,7 @@ public class Menu {
     }
 
     // Method - Use a getter to retrieve Menu Items
-    public void addItem(MenuItem item)
-
+    public ArrayList<MenuItem> getItems() {
+        return items;
+    }
 }
