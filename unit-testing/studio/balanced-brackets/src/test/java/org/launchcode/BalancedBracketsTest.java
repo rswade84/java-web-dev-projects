@@ -37,4 +37,31 @@ class BalancedBracketsTest {
         // Assert
         assertTrue(result);
     }
+
+    @Test
+    public void singlePairOfBracketsReturnTrue() {
+        // Arrange
+        String input = "[]";
+
+        // Act
+        Boolean result = BalancedBrackets.hasBalancedBrackets(input);
+
+        // Assert
+        assertTrue(result);
+    }
+
+    @Test
+    public void multiplePairOfBracketsReturnTrue() {
+        String input = "[][][]";
+        Boolean result = BalancedBrackets.hasBalancedBrackets(input);
+        assertTrue(result);
+
+    }
+
+    @Test
+    public void bracketWithTextInsideReturnTrue() {
+        String input = "[LaunchCode]";
+        Boolean result = BalancedBrackets.hasBalancedBrackets(input);
+        assertTrue(result);
+    }
 }
