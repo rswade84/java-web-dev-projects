@@ -2,6 +2,8 @@ package org.launchcode;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class BalancedBracketsTest {
@@ -74,4 +76,35 @@ class BalancedBracketsTest {
         boolean result = BalancedBrackets.hasBalancedBrackets(input);
         assertTrue(result);
     }
+
+    @Test
+    public void twoLeftClosingBracketReturnsFalse() {
+        String input = "[[";
+        boolean result = BalancedBrackets.hasBalancedBrackets(input);
+        assertFalse(result);
+    }
+
+    @Test
+    public void oneLeftClosingBracketReturnsFalse() {
+        String input = "[";
+        boolean result = BalancedBrackets.hasBalancedBrackets(input);
+        assertFalse(result);
+    }
+
+    @Test
+    public void fourLeftClosingBracketReturnsFalse() {
+        String input = "[[[[";
+        boolean result = BalancedBrackets.hasBalancedBrackets(input);
+        assertFalse(result);
+    }
+
+    @Test
+    public void fiveLeftClosingBracketReturnsFalse() {
+        String input = "[[[[[";
+        boolean result = BalancedBrackets.hasBalancedBrackets(input);
+        assertFalse(result);
+    }
+
+
+
 }
