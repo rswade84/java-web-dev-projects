@@ -12,56 +12,66 @@ class BalancedBracketsTest {
         assertTrue(BalancedBrackets.hasBalancedBrackets("[]"));
     }
 
-    // Test 1
-
-    @Test
-    public void emptyStringReturnsTrue() {
-        // Arrange
-        String input = "";
-
-        // Act
-        boolean result = BalancedBrackets.hasBalancedBrackets(input);
-
-        // Assert
-        assertTrue(result);
-    }
-
-    @Test
-    public void stringWithoutBracketsReturnsTrue() {
-        // Arrange
-        String input = "LaunchCode";
-
-        // Act
-        Boolean result = BalancedBrackets.hasBalancedBrackets(input);
-
-        // Assert
-        assertTrue(result);
-    }
-
     @Test
     public void singlePairOfBracketsReturnTrue() {
+
         // Arrange
         String input = "[]";
 
         // Act
         Boolean result = BalancedBrackets.hasBalancedBrackets(input);
 
+        // Assertion
+        assertTrue(result);
+
+    }
+
+    @Test
+    public void bracketsReturnFalse() {
+
+        // Arrange
+        String input = "][";
+
+        // Act
+        Boolean result = BalancedBrackets.hasBalancedBrackets(input);
+
         // Assert
-        assertTrue(result);
+        assertFalse(result);
+
     }
 
     @Test
-    public void multiplePairOfBracketsReturnTrue() {
+    public void multiplePairOfBrackets() {
         String input = "[][][]";
-        Boolean result = BalancedBrackets.hasBalancedBrackets(input);
+        boolean result = BalancedBrackets.hasBalancedBrackets(input);
         assertTrue(result);
-
     }
 
     @Test
-    public void bracketWithTextInsideReturnTrue() {
+    public void bracketsReturnTrue() {
+        String input = "";
+        boolean result = BalancedBrackets.hasBalancedBrackets(input);
+        assertTrue(result);
+    }
+
+    @Test
+    public void stringWithoutBracketTrue() {
+        String input = "LauchCode";
+        boolean result = BalancedBrackets.hasBalancedBrackets(input);
+        assertTrue(result);
+    }
+
+    @Test
+    public void bracketsWithTextInsideReturnTrue() {
         String input = "[LaunchCode]";
-        Boolean result = BalancedBrackets.hasBalancedBrackets(input);
+        boolean result = BalancedBrackets.hasBalancedBrackets(input);
+        assertTrue(result);
+    }
+
+    @Test
+    public void bracketsWithinStringReturnTrue() {
+        String input = "Launch[Code]";
+        boolean result = BalancedBrackets.hasBalancedBrackets(input);
         assertTrue(result);
     }
 }
